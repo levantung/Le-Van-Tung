@@ -1,0 +1,14 @@
+//OPEN DATABASE//////////////
+conn=mysql_init((MYSQL *)0);
+mysql_options(conn,MYSQL_READ_DEFAULT_GROUP,"mysqlcapi");
+mysql_real_connect(conn,"localhost","","","test",0,NULL,0);
+//CREATE TABLE/////////////
+sprintf(SQL,"drop table if exists %s",argv[1]);
+rc=mysql_query(conn,SQL);
+sprintf(SQL,"create table %s(ID varchar(255)",argv[1]);
+for(i=2;i<argc;i++)
+{
+	sprintf(BIT,",%s varchar(255)",argv[1]);
+	strcat(SQL,BIT);
+}
+rc=mysql_query(conn,SQL);

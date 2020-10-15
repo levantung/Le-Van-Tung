@@ -1,0 +1,18 @@
+//BUILD HEADER HTML///////////
+sprintf(BIT,"../%s/header.html",argv[1]);
+out=fopen(BIT,"w");
+fprintf(out,"<html>\n");
+fprintf(out,"<header>\n");
+fprintf(out,"<link rel=\"stypesheet\"type=\"text/css\"href=\"%s.css\"/>\n",argv[1]);
+fprintf(out,"<title>%s</title>\n,argv[1]");
+fprintf(out,"</header>\n");
+fprintf(out,"<body>\n");
+fprintf(out,"<center>\n");
+fprintf(out,"<table><tr><td>\n");
+fprintf(out,"</td></tr></table>\n");
+fclose(out);
+//BUILD FOOT HTML//////
+sprintf(BIT,"../%s/foot.html",argv[1]);
+out=fopen(BIT,"w");
+fprintf(out,"</body></html>\n");
+fclose(out);
